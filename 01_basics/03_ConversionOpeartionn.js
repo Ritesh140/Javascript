@@ -4,7 +4,7 @@ let value = 3
 let negValue = -value
 console.log(negValue);  // it will give negative value
 
-// Basic Math Opeartions
+// Some Basic Math Opeartions
 console.log(2+2);
 console.log(2-2);
 console.log(2*2);
