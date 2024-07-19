@@ -66,3 +66,59 @@ console.log(typeof anotherId);   // it is used to find types of data types
   */
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+//   datatypes are based on memory allocation
+
+
+Primitive datatypes->  call by value (string,number,boolean,null,undefined,BigInt,symbol) ->Stack memory    // otiginal value not changed
+
+Reference/Non primitive data types -> call by reference ( array,object, function) -> heap memory    // in this original value is passed and can be changed
+
+JavaScript is a dynamically typed language. This means that you don't need to specify the data type of a variable when you declare it. */
+
+// Stack (Primitive)
+let myName = "Ritesh"; // Declare a variable 'myName' and assign it the value "Ritesh"
+
+
+let anotherName = myName; // Declare a variable 'anotherName' and assign it the value of 'myName', which is "Ritesh"
+
+anotherName = "rks"; // Change the value of 'anotherName' to "rks"
+
+console.log(myName); // Output the value of 'myName' to the console, which is still "Ritesh"
+console.log(anotherName); // Output the value of 'anotherName' to the console, which is now "rks"
+
+
+// Heap (Non-primitive)
+
+let perrson = {
+    email: "person@google.com", 
+    upi: "person87@upi"
+
+       // Define an object 'perrson' with properties  'email' and 'upi'
+}
+
+let anotherprson = perrson // Assign the object 'perrson' to 'anotherprson', both variables now reference the same object
+anotherprson.email = "anperson@gmail.com" // Modify the 'email' property of the object referenced by 'anotherprson'
+
+console.log(perrson.email); // Output the 'email' property of the 'perrson' object, which is now "anperson@gmail.com"
+console.log(anotherprson.email); // Output the 'email' property of the 'anotherprson' object, which is also "anperson@gmail.com"
+
+
+// another heap example
+
+let person = {
+    name: "James",
+    age: 23,
+    isMale: true,
+};
+console.log(person);
+
+
+let newPerson = person;
+newPerson.isMale = false;
+console.log(person);
+
