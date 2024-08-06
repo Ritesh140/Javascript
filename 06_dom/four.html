@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+       const li = document.createElement('li')
+       li.innerHTML = `${langName}`
+       document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptimszLanguage(langName){
+       const li = document.createElement('li');
+       li.appendChild(document.createTextNode(langName))
+       document.querySelector('.language').appendChild(li)
+    }
+    addOptimszLanguage("golang")
+
+    // Edit
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // console.log(secondLang)
+    // secondLang.innerHTML =  "Mojo"
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+    secondLang.replaceWith(newLi)
+
+    // Edit
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>Typescript</li>'
+
+    // remove 
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+
+    /*
+    <script>
+    // Function to add a new language to the list
+    function addLanguage(langName) {
+        const li = document.createElement('li'); // Create a new 'li' element
+        li.innerHTML = `${langName}`; // Set the inner HTML of the 'li' element
+        document.querySelector('.language').appendChild(li); // Append the 'li' element to the '.language' list
+    }
+
+    // Adding languages using addLanguage function
+    addLanguage("python");
+    addLanguage("typescript");
+
+    // Optimized function to add a new language to the list
+    function addOptimszLanguage(langName) {
+        const li = document.createElement('li'); // Create a new 'li' element
+        li.appendChild(document.createTextNode(langName)); // Create a text node and append it to the 'li' element
+        document.querySelector('.language').appendChild(li); // Append the 'li' element to the '.language' list
+    }
+
+    // Adding a language using addOptimszLanguage function
+    addOptimszLanguage("golang");
+
+    // Edit the second language in the list
+    const secondLang = document.querySelector("li:nth-child(2)"); // Select the second 'li' element
+    const newLi = document.createElement('li'); // Create a new 'li' element
+    newLi.textContent = "Mojo"; // Set the text content of the new 'li' element
+    secondLang.replaceWith(newLi); // Replace the second 'li' element with the new one
+
+    // Edit the first language in the list
+    const firstLang = document.querySelector("li:first-child"); // Select the first 'li' element
+    firstLang.outerHTML = '<li>Typescript</li>'; // Replace the first 'li' element with a new one
+
+    // Remove the last language in the list
+    const lastLang = document.querySelector('li:last-child'); // Select the last 'li' element
+    lastLang.remove(); // Remove the last 'li' element from the list
+    */
+</script>
+</html>
