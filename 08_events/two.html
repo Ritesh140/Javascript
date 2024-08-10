@@ -26,8 +26,11 @@
 
   // setTimeout(changeText, 2000)
 
+  // Setting a timeout to change the text of <h1> after 2 seconds.
   const ChangeMe =  setTimeout(changeText, 2000)
 
+
+   // Adding an event listener to the "Stop" button to clear the timeout and stop the text change.
   document.querySelector('#stop').addEventListener('click', function(){
     clearTimeout(ChangeMe)
     console.log("STOPPED")
