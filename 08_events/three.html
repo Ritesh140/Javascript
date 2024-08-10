@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set Interval</title>
+</head>
+<body>
+    <h1>Ritesh Kumar Singh</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+ /*  
+  setInterval(function(){
+        console.log("Ritesh", Date.now());
+    },1000)
+*/
+
+  const sayHiWithDate = function(str){
+     console.log(str, Date.now())
+  }
+
+//  setInterval(sayHiWithDate,1000,"HI")
+
+  const interValid = setInterval(sayHiWithDate,1000,"HI")
+
+  clearInterval(interValid)
+ 
+
+  
+let interaValid;
+
+function nameDate() {
+    console.log("Ritesh Singh", Date.now());
+}
+
+const myName = function() {
+    interaValid = setInterval(nameDate, 1000);
+}
+
+const stopName = function() {
+    clearInterval(interaValid);
+}
+
+document.querySelector('#start').addEventListener('click', myName);
+
+document.querySelector('#stop').addEventListener('click', stopName);
+
+
+
+
+</script>
+</html>
